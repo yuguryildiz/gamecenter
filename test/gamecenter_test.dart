@@ -16,6 +16,6 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    expect(await Gamecenter.platformVersion, '42');
+    expect(await GameCenter.connect, '42');
   });
 }

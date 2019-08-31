@@ -6,12 +6,12 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
 
-class GamecenterPlugin: MethodCallHandler {
+class GameCenterPlugin: MethodCallHandler {
   companion object {
     @JvmStatic
     fun registerWith(registrar: Registrar) {
       val channel = MethodChannel(registrar.messenger(), "gamecenter")
-      channel.setMethodCallHandler(GamecenterPlugin())
+      channel.setMethodCallHandler(GameCenterPlugin())
     }
   }
 

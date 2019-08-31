@@ -1,8 +1,8 @@
-#import "GamecenterPlugin.h"
+#import "GameCenterPlugin.h"
 #import <gamecenter/gamecenter-Swift.h>
 
-@implementation GamecenterPlugin
+@implementation GameCenterPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [SwiftGamecenterPlugin registerWithRegistrar:registrar];
+  [SwiftGameCenterPlugin registerWithRegistrar:registrar];
 }
 @end
