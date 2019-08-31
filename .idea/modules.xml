@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gamecenter.iml" filepath="$PROJECT_DIR$/gamecenter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/gamecenter_android.iml" filepath="$PROJECT_DIR$/android/gamecenter_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/android/gamecenter_example_android.iml" filepath="$PROJECT_DIR$/example/android/gamecenter_example_android.iml" />
+    </modules>
+  </component>
+</project>
