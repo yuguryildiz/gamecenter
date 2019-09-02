@@ -1,3 +1,7 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Project Initialized
+
+## 0.0.2
+
+* iOS Game Center Completed
