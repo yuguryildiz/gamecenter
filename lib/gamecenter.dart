@@ -5,9 +5,27 @@ import 'package:flutter/services.dart';
 class GameCenter {
   static const MethodChannel _channel = const MethodChannel('gamecenter');
 
-  static Future get connect async {
-    await _channel.invokeMethod('connect');
-    // final String version = await _channel.invokeMethod('getPlatformVersion');
-    // return version;
+  static Future login() async {
+    return await _channel.invokeMethod('login');
+  }
+
+  static Future showLeaderboard(String leaderboardId) async {
+    return await _channel.invokeMethod('showLeaderboard', [leaderboardId]);
+  }
+
+  static Future showAchievementsBoard() async {
+    return await _channel.invokeMethod('showAchievementsBoard');
+  }
+
+  static Future reportAchievement(String achievementId) async {
+    return await _channel.invokeMethod('reportAchievement', [achievementId]);
+  }
+
+  static Future getScore(String leaderboardId) async {
+    return await _channel.invokeMethod('getScore', [leaderboardId]);
+  }
+
+  static Future saveScore(String leaderboardId, int score) async {
+    return await _channel.invokeMethod('saveScore', [leaderboardId, score]);
   }
 }
