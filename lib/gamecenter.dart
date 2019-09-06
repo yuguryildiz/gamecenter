@@ -5,8 +5,8 @@ import 'package:flutter/services.dart';
 class GameCenter {
   static const MethodChannel _channel = const MethodChannel('gamecenter');
 
-  static Future login() async {
-    return await _channel.invokeMethod('login');
+  static Future login({silent: true}) async {
+    return await _channel.invokeMethod('login', silent);
   }
 
   static Future showLeaderboard(String leaderboardId) async {

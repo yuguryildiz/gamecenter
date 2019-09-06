@@ -41,6 +41,6 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.google.android.gms:play-services-games:17.0.0" //Todo: Add To Documentation
+    implementation "com.google.android.gms:play-services-games:18.0.1" //Todo: Add To Documentation
     implementation 'com.google.android.gms:play-services-auth:17.0.0'  //Todo: Add To Documentation
 }

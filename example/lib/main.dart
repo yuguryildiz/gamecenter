@@ -27,9 +27,16 @@ class _MyAppState extends State<MyApp> {
             children: <Widget>[
               GestureDetector(
                 onTap: () async {
-                  print(await GameCenter.login());
+                  print(await GameCenter.login(silent: false));
                 },
                 child: Text("Login To Game Center"),
+              ),
+              SizedBox(height: 15),
+              GestureDetector(
+                onTap: () async {
+                  print(await GameCenter.login(silent: true));
+                },
+                child: Text("Login To Game Center (Silent)"),
               ),
               SizedBox(height: 15),
               GestureDetector(
