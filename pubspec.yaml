@@ -1,7 +1,7 @@
 name: gamecenter
 description: Flutter plugin for iOS Game Center and Android Google Play Games.
 version: 0.0.3
-author: Yasin Uğur Yıldız <y.ugur.yildiz@gmail.com>
+# author: Yasin Uğur Yıldız <y.ugur.yildiz@gmail.com>
 homepage: https://github.com/yuguryildiz/gamecenter
 
 environment:
