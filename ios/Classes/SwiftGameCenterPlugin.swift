@@ -12,18 +12,42 @@ public class SwiftGameCenterPlugin: NSObject, FlutterPlugin, GKGameCenterControl
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         if (call.method == "login") {
+            
+            let silent = call.arguments as? Bool
+            
             let localPlayer: GKLocalPlayer = GKLocalPlayer.localPlayer()
             localPlayer.authenticateHandler = {(view, error) in
                 if (error != nil) {
                     result(false)
                 }
                 else if (view != nil) {
-                    UIApplication.shared.keyWindow?.rootViewController?.present(view!, animated: true, completion: nil)
-                    result(true)
+                    if (silent == false) {
+                        UIApplication.shared.keyWindow?.rootViewController?.present(view!, animated: true, completion: nil)
+                    }
+                    else {
+                        if (localPlayer.isAuthenticated) {
+                            result(true)
+                        }
+                        else {
+                            result(false)
+                        }
+                    }
                 }
                 else if (localPlayer.isAuthenticated) {
                     result(true)
                 }
+                else {
+                    result(false)
+                }
+            }
+        }
+        else if (call.method == "getPlayerName") {
+            let localPlayer: GKLocalPlayer = GKLocalPlayer.localPlayer()
+            if (localPlayer.isAuthenticated) {
+                result(localPlayer.alias)
+            }
+            else {
+                result(nil)
             }
         }
         else if (call.method == "showLeaderboard") {

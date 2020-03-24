@@ -9,6 +9,10 @@ class GameCenter {
     return await _channel.invokeMethod('login', silent);
   }
 
+  static Future getPlayerName() async {
+    return await _channel.invokeMethod('getPlayerName');
+  }
+
   static Future showLeaderboard(String leaderboardId) async {
     return await _channel.invokeMethod('showLeaderboard', [leaderboardId]);
   }

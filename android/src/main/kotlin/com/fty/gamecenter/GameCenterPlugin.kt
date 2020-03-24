@@ -66,7 +66,9 @@ class GameCenterPlugin(private val registrar: Registrar) : MethodCallHandler, Ac
 
             val silent = call.arguments as Boolean
 
-            val mGoogleSignInClient = GoogleSignIn.getClient(this.registrar.activity(), GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
+            val mGoogleSignInClient = GoogleSignIn.getClient(this.registrar.activity(), GoogleSignInOptions.Builder(
+                GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN).build()
+            )
 
             if (silent) {
                 mGoogleSignInClient.silentSignIn().addOnCompleteListener(this.registrar.activity(),
@@ -75,6 +77,7 @@ class GameCenterPlugin(private val registrar: Registrar) : MethodCallHandler, Ac
                             if (task.isSuccessful) {
                                 result.success(true)
                             } else {
+                                result.success(task.exception)
                                 result.success(task.exception!!.message)
                                 //onDisconnected()
                             }
