@@ -10,3 +10,7 @@
 
 * iOS Silent Mode Completed
 * getPlayerName Method Created
+
+## 0.0.4
+
+* DartDoc Comments Created
